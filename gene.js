@@ -38,7 +38,8 @@ Gene.prototype.mate = function (gene) {
 Gene.prototype.calcCost = function (compareTo) {
     var total = 0;
     for (i = 0; i < this.palette.length; i++) {
-        total += (this.palette.charCodeAt(i) - compareTo.charCodeAt(i)) * (this.palette.charCodeAt(i) - compareTo.charCodeAt(i));
+        var diff = this.palette[i].getColorInDecimal() - compareTo[i].getColorInDecimal();
+        total += diff * diff;
     }
     this.cost = total;
 };
