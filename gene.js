@@ -6,6 +6,7 @@ function Gene (palette) {
 Gene.prototype.palette = [];
 
 Gene.prototype.random = function (length) {
+    this.palette = [];
     while (length--) {
         var color = randomColor();
         this.palette.push(new Color(color.r, color.g, color.b));
