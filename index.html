@@ -2,15 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Path Creator</title>
+    <title>Evolutionary</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <style type="text/css">
-    html,body{
+    html, body {
         margin: 0;
         overflow: hidden;
     }
+
+    body {
+        margin-top: 30px;
+    }
+
+    .row > div {
+        flex: 1;
+        border: 1px solid grey;
+    }
+
+    .row {
+        margin: 0 10px;
+    }
 </style>
+
+<div id="workspace">
+    <div class="row">
+        <div class="col">Generation 1</div>
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+        <div class="col">7</div>
+    </div>
+</div>
+<nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark justify-content-center ">
+    <button type="button" class="btn btn-danger btn-lg" id="gen-btn">Generate</button>
+</nav>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="cell.js"></script>
 <script src="cellgrid.js"></script>
