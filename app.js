@@ -9,9 +9,23 @@
         new Color(255, 127, 0),
         new Color(255, 0, 0)];
 
+    var row = document.createElement("div");
+    row.className += "row";
+
+    for (var j = 0; j < rainbow.length; j++) {
+        var color = rainbow[j];
+
+        var col = document.createElement("div");
+        col.className += "col";
+
+        col.style.background = color.getColor();
+        row.appendChild(col);
+    }
+
+    document.getElementById("rainbow").appendChild(row);
+
     button.addEventListener("click", function () {
         var population = new Population(rainbow, 10);
         population.generation();
-
-    }, false);
+    }, {once: true});
 })()

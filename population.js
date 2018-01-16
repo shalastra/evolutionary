@@ -11,7 +11,7 @@ function Population (goal, size) {
 }
 
 Population.prototype.display = function () {
-    console.log(this.members);
+    document.getElementById("workspace").innerHTML = "";
     for (var i = 0; i < this.members.length; i++) {
         var member = this.members[i];
 
@@ -59,7 +59,7 @@ Population.prototype.generation = function () {
     for (var i = 0; i < this.members.length; i++) {
         this.members[i].mutate(0.5);
         this.members[i].calcCost(this.goal);
-        if (this.members[i].palette == this.goal) {
+        if (_.isEqual(this.members[i].palette, this.goal)) {
             this.sort();
             this.display();
             return true;
@@ -69,5 +69,5 @@ Population.prototype.generation = function () {
     var scope = this;
     setTimeout(function () {
         scope.generation();
-    }, 20);
+    }, 200);
 };
