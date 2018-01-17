@@ -17,7 +17,7 @@ Gene.prototype.mutate = function (chance) {
     if (Math.random() > chance) return;
 
     var index = Math.floor(Math.random() * this.palette.length);
-    var upOrDown = Math.random() <= 0.5 ? -5 : 5;
+    var upOrDown = Math.random() <= 0.5 ? -15 : 15;
 
     var currentColor = this.palette[index];
     var newColor = new Color((currentColor.red + upOrDown) % 255,
@@ -46,7 +46,7 @@ Gene.prototype.calcCost = function (compareTo) {
         var diffGreen = thisColor.green - compared.green;
         var diffBlue = thisColor.blue - compared.blue;
 
-        var diff = Math.min(diffRed, diffGreen, diffBlue);
+        var diff = diffRed + diffGreen + diffBlue;
         total += Math.abs(diff);
     }
     this.cost = total;

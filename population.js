@@ -54,7 +54,11 @@ Population.prototype.generation = function () {
     this.sort();
     this.display();
     var children = this.members[0].mate(this.members[1]);
-    this.members.splice(this.members.length - 2, 2, children[0], children[1]);
+    if(Math.random() >= 0.5) {
+        this.members.splice(this.members.length - 2, 2, children[0], children[1]);
+    } else {
+        this.members.splice(this.members.length - 2, 2, children[1], children[0]);
+    }
 
     for (var i = 0; i < this.members.length; i++) {
         this.members[i].mutate(0.5);
@@ -67,7 +71,7 @@ Population.prototype.generation = function () {
     }
     this.generationNumber++;
     var scope = this;
-    setTimeout(function () {
+    var timer = setTimeout(function () {
         scope.generation();
-    }, 20);
+    }, 100);
 };
