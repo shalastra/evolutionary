@@ -25,7 +25,7 @@
     document.getElementById("rainbow").appendChild(row);
 
     button.addEventListener("click", function () {
-        var population = new Population(rainbow, 10);
+        var population = new Population(rainbow, 15);
         population.generation();
     }, {once: true});
 })()

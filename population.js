@@ -69,5 +69,5 @@ Population.prototype.generation = function () {
     var scope = this;
     setTimeout(function () {
         scope.generation();
-    }, 200);
+    }, 20);
 };
