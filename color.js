@@ -9,8 +9,7 @@ Color.prototype.getColor = function () {
 };
 
 Color.prototype.getColorInDecimal = function () {
-    // return (this.red << 16) + (this.green << 8) + (this.blue);
-    return this.red + this.green + this.blue;
+    return (this.red << 16) + (this.green << 8) + (this.blue);
 };
 
 Color.prototype.getRgb = function () {

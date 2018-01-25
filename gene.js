@@ -46,8 +46,16 @@ Gene.prototype.calcCost = function (compareTo) {
         var diffGreen = thisColor.green - compared.green;
         var diffBlue = thisColor.blue - compared.blue;
 
-        var diff = diffRed + diffGreen + diffBlue;
-        total += Math.abs(diff);
+        var diffArr = [];
+
+        diffArr.push(diffGreen);
+        diffArr.push(diffRed);
+        diffArr.push(diffBlue);
+
+        diffArr.sort();
+
+        var diff = diffArr[0] * 3 + diffArr[1] * 2 + diffArr[2] * 1;
+        total += diff * diff;
     }
     this.cost = total;
 };
